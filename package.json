@@ -1,0 +1,28 @@
+{
+  "name": "tolu-templae",
+  "version": "1.0.0",
+  "description": "template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liaohuanle/tolo-template.git"
+  },
+  "keywords": [
+    "node.js",
+    "ejs"
+  ],
+  "author": "liaohaunle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Liaohuanle/tolo-template/issues"
+  },
+  "homepage": "https://github.com/Liaohuanle/tolo-template#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "moment": "^2.20.1"
+  }
+}

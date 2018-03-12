@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Tolo company.">
+  <meta name="description" content="Tolo">
+  <meta name="robots" content="index">
+  <meta name="robots" content="follow">
+  <meta name=”apple-mobile-web-app-capable” content=”yes” />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default | black | black-translucent" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= title %></title>
+  <link rel="stylesheet" href='//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css'/>
+  <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+  <%- include('../header/index') %>
+  <section class="section">
+    <div class="container">
+      <%- include(viewUrl, data) %>   
+    </div>
+  </section>
+  <%- include('../footer/index') %>
+</body>
+  <script src='assets/js/zepto.js'></script>
+  <script>
+    (function SafariScable(){
+      document.addEventListener('touchstart',function (event) {
+        if(event.touches.length>1){
+          event.preventDefault();
+          }
+        })
+        var lastTouchEnd=0;
+        document.addEventListener('touchend',function (event) {
+          var now=(new Date()).getTime();
+          if(now-lastTouchEnd<=300){
+            event.preventDefault();
+          }
+          lastTouchEnd=now;
+        },false)
+    })()
+  </script>
+</html>
