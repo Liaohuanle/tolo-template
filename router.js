@@ -1,5 +1,5 @@
 const layoutModel = {
-  common: `layout/common`
+  common: `index`
 }
 
 

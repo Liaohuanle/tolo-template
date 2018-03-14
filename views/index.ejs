@@ -13,33 +13,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><%= title %></title>
   <link rel="stylesheet" href='//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css'/>
-  <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link rel="stylesheet" href='assets/css/main.css'/>
+  <script src="//use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 <body>
-  <%- include('../header/index') %>
-  <section class="section">
-    <div class="container">
-      <%- include(viewUrl, data) %>   
-    </div>
-  </section>
-  <%- include('../footer/index') %>
+  <%- include('./header/index') %>
+  <%- include('./layout/container') %>
+  <%- include('./footer/index') %>
 </body>
   <script src='assets/js/zepto.js'></script>
-  <script>
-    (function SafariScable(){
-      document.addEventListener('touchstart',function (event) {
-        if(event.touches.length>1){
-          event.preventDefault();
-          }
-        })
-        var lastTouchEnd=0;
-        document.addEventListener('touchend',function (event) {
-          var now=(new Date()).getTime();
-          if(now-lastTouchEnd<=300){
-            event.preventDefault();
-          }
-          lastTouchEnd=now;
-        },false)
-    })()
-  </script>
+  <%- include assets/js/main %>
 </html>

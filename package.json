@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Liaohuanle/tolo-template#readme",
   "dependencies": {
+    "chokidar": "^2.0.2",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "moment": "^2.20.1"
