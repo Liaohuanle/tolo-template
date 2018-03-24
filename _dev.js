@@ -30,7 +30,7 @@ watcher.on('ready', () => {
 
       watcher.on('add', (path) => {
 
-            writeLess(path)
+            // writeLess(path)
             console.log('** add: watched new file add, do something');
 
             appIns = reload(appIns);
@@ -39,11 +39,11 @@ watcher.on('ready', () => {
 
       watcher.on('unlink', (path) => {
 
-            path = path.split('tolo/')[1]
+            // path = path.split('tolo/')[1]
 
-            lessFile = lessFile.replace(`./${path}`, '')
+            // lessFile = lessFile.replace(`./${path}`, '')
 
-            fs.writeFile(config.less.from, lessFile)
+            // fs.writeFile(config.less.from, lessFile)
 
             console.log('** remove: watched file remove, do something');
 
@@ -75,7 +75,15 @@ function writeLess(p){
 
 function compileLess(path){
   const isLess = /.less$/.test(path)
-  isLess && cp.exec(`lessc ${config.less.from} ${config.less.dest}`)
+  const src =  path.split('/main.less')[0]
+  const dest = `${src}/css.ejs`
+  if( !src || !dest ){
+    console.log(`***********error**************       =>   `, src, dest)
+    return
+  }
+  if(isLess){
+    cp.exec(`lessc -clean-css ${src} ${dest}`)
+  }
 }
 
 function reload(appIns) {
