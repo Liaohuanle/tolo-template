@@ -14,7 +14,11 @@ let appIns = cp.fork(path.join(__dirname, './index.js'));
 
 let lessFile = ''
 
-readFile()
+let lessFileList = []
+
+lessFileList = fetchAllFIleList(config.rootDir)
+
+console.info(lessFileList)
 
 watcher.on('ready', () => {
 
@@ -30,65 +34,58 @@ watcher.on('ready', () => {
 
       watcher.on('add', (path) => {
 
-            // writeLess(path)
-            console.log('** add: watched new file add, do something');
-
-            appIns = reload(appIns);
+        console.log('** add: watched new file add, do something');
+        lessFileList = fetchAllFIleList(config.rootDir)
+        appIns = reload(appIns);
 
       });
 
       watcher.on('unlink', (path) => {
 
-            // path = path.split('tolo/')[1]
+        // path = path.split('tolo/')[1]
 
-            // lessFile = lessFile.replace(`./${path}`, '')
+        // lessFile = lessFile.replace(`./${path}`, '')
 
-            // fs.writeFile(config.less.from, lessFile)
+        // fs.writeFile(config.less.from, lessFile)
 
-            console.log('** remove: watched file remove, do something');
-
-            appIns = reload(appIns);
+        console.log('** remove: watched file remove, do something');
+        lessFileList = fetchAllFIleList(config.rootDir)
+        appIns = reload(appIns);
 
       });
 
 });
 
-process.on('SIGINT', () => {
-
-      process.exit(0);
-
-});
-
-function readFile(){
-      const src = config.less.from
-      fs.readFile(src, (err, data) => {
-            lessFile = data
-      })
-}
-
-function writeLess(p){
-      const isLess = /.less$/.test(p)
-      p = p.split('tolo/')[1]
-      lessFile = `${lessFile} @import './${p}';`
-      fs.writeFile(config.less.from, lessFile)
-}
+process.on('SIGINT', () => process.exit(0));
 
 function compileLess(path){
-  const isMainLessFile = /main.less/.test(path)
-  const temp =  path.split('/main.less')[0]
-  const dest = `${temp}/css.ejs`
-  if(isMainLessFile && dest){
-    console.info('lessc compile => ', path, dest)
-    cp.exec(`lessc -clean-css ${path} ${dest}`)
-  }else{
-    console.log(`***********error**************       =>   `, path, dest)
-  }
+  const isLessFile = /.less/.test(path)
+  isLessFile && lessFileList && lessFileList.length && lessFileList.forEach(item => {
+    const temp =  item.split('/main.less')[0]
+    const dest = `${temp}/css.ejs`
+    cp.exec(`lessc -clean-css ${item} ${dest}`)
+    console.info('lessc compile => ', item, dest)
+  })
 }
 
 function reload(appIns) {
 
-      appIns.kill('SIGINT');
+  appIns.kill('SIGINT');
 
-      return cp.fork(require('path').join(__dirname, './index.js'));
+  return cp.fork(require('path').join(__dirname, './index.js'));
 
+}
+
+function fetchAllFIleList(root){
+  const allFiles = fs.readdirSync(root)
+  let res = []
+  allFiles && allFiles.length && allFiles.forEach(item => {
+    const stat = fs.lstatSync(path.join(root, '/',item))
+    if (!stat.isDirectory()){
+      /main.less/.test(item) && res.push(path.join(root,'/',item));
+    } else {
+      res = res.concat(fetchAllFIleList(path.join(root,'/',item)));
+    }
+  })
+  return res
 }
