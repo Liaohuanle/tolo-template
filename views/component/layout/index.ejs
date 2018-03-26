@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../header/index', {
-  title,
-  cssSrc
-}) %>
+<%- include('../header/index', { title, cssSrc }) %>
 <body>
-  <%- include(navSrc) %>
-  <%- include(containerSrc) %>
-  <%- include(footerSrc) %>
+  <section class="wrapper">
+    <%- include(navSrc) %>
+    <%- include(containerSrc) %>
+    <%- include(footerSrc) %>
+  </section>
 </body>
-  <script src='assets/js/zepto.js'></script>
+<script>
   <%- include(jsSrc)  %>
+</script>
 </html>

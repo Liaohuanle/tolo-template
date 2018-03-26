@@ -1,0 +1,33 @@
+@import '../../less/config.less';
+
+header{
+  height: @nav-height;
+  background-color: @header-bg-color; 
+  color: @font-white;
+}
+.header{
+  line-height: @nav-height;
+  .header-item{
+    margin-right: 2rem;
+    font-size: 1rem;
+    svg{
+      font-size: 1.2rem;
+      margin-right: 6px;
+    }
+  }
+  .header-right{
+    overflow: hidden;
+    position: relative;
+    float: right;
+    a{
+      color: @font-white;
+      display: inline-block;
+      margin-left: 18px;
+      font-size: 1.2rem;
+      transition: ease all .3s;
+      &:hover{
+        color: @primary-color;
+      }
+    }
+  }
+}

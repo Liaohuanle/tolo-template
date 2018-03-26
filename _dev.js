@@ -74,15 +74,14 @@ function writeLess(p){
 }
 
 function compileLess(path){
-  const isLess = /.less$/.test(path)
-  const src =  path.split('/main.less')[0]
-  const dest = `${src}/css.ejs`
-  if( !src || !dest ){
-    console.log(`***********error**************       =>   `, src, dest)
-    return
-  }
-  if(isLess){
-    cp.exec(`lessc -clean-css ${src} ${dest}`)
+  const isMainLessFile = /main.less/.test(path)
+  const temp =  path.split('/main.less')[0]
+  const dest = `${temp}/css.ejs`
+  if(isMainLessFile && dest){
+    console.info('lessc compile => ', path, dest)
+    cp.exec(`lessc -clean-css ${path} ${dest}`)
+  }else{
+    console.log(`***********error**************       =>   `, path, dest)
   }
 }
 

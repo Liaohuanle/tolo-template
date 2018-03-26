@@ -1,11 +1,21 @@
-export const generateView = (path, title, layoutType, view, data) => {
-  return {
+module.exports = ({
+  path,
+  title,
+  navSrc,
+  containerSrc,
+  footerSrc,
+  jsSrc,
+  cssSrc,
+  data
+}) => (
+  {
     path,
-    view: layoutModel[ layoutType || 'common'],
-    params: {
-      viewUrl: `../${view}/index`,
-      data,
-      title
-    }
+    title,
+    navSrc,
+    containerSrc,
+    footerSrc,
+    jsSrc,
+    cssSrc,
+    data
   }
-}
+)
