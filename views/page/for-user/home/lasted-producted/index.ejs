@@ -1,0 +1,28 @@
+<section class="section">
+  <div class="container">
+    <div class="has-text-centered ">
+      <h1 class="title"><%= lastedProduct.title %></h1>
+      <p class="subTitle"><%= lastedProduct.content %></p>
+      <a href="" class="button m-t-l is-primary is-outlined is-width is-large">了解更多</a>
+    </div>
+    <div class="columns m-t-l">
+        <%for(var i = 0; i < lastedProduct.productes.length; i++){%>
+          <div class="column is-4">
+            <div class="product-card">
+              <img alt="吐露科技，最新产品" src="<%=lastedProduct.productes[i].src%>"/>
+              <h4 class="m-b-s"><%=lastedProduct.productes[i].title%></h4>
+              <p class="m-b-s">
+                <span><%=lastedProduct.productes[i].price%></span> - 
+                <%=lastedProduct.productes[i].desc%>
+              </p>
+              <div class="m-t-s m-b-l"><%=lastedProduct.productes[i].type%></div>
+              <div class="oprtation-panel m-t-m">
+                <input class="input" type="number"/>
+               <button class="button is-primary is-8">去购买</button>
+              </div>
+            </div>
+          </div>   
+        <%}%> 
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+
+<section class="hero carousel is-medium has-carousel carousel-container-warpper" data-autoplay="true">
+  <div class="hero-carousel carousel-animated carousel-animate-fade">
+    <div class='carousel-container'>
+      <% for(var i = 0; i < bannerImageList.length; i++ ){ %>
+        <div class='carousel-item has-background is-active'>
+          <img class="is-background" src="<%= bannerImageList[i] %>" alt="吐露生物科技" />
+        </div>
+      <% } %>
+    </div>
+  </div>
+  <div class="hero-head">
+    <section class="container">
+      <%- include('../../../../component/nav/sub-nav') %>
+    </section>
+  </div>
+  <div class="hero-body has-text-centered">
+    <div class="columns is-mobile is-centered container">
+      <div class="column banner-title-content">
+        <h1>高通量基因合成</h1>
+        <p>每个碱基</p>
+        <p class="special-price">吐血价<span>0.5</span>元</p>
+        <button class="button is-primary is-width is-outlined level-left m-t-l">了解更多</button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,46 @@
+@section-bg: #f8f8f8;
+.section-bg-gray{
+  background-color: @section-bg;
+}
+.carousel-container .carousel-item{
+  cursor: pointer;
+  padding: initial !important;
+  position: relative;
+  p{
+    opacity: 0;
+    position: absolute;
+    transition: all .3s;
+    z-index: 3;
+    font-size: 1.15rem;
+    line-height: 2.5rem;
+    display: block;
+    padding: 25px;
+    text-align: center;
+  }
+  .image{
+    &:after{
+      content: '';
+      width: 100%;
+      height: 100%;
+      background:rgba(144, 164, 177, .6);
+      z-index: 1;
+      position: absolute;
+      top: 0px;
+      opacity: 0;
+      transition: all .3s;
+    }
+  }
+  &:hover{
+    box-shadow: 4px 5px 20px 1px rgba(144, 164, 177, .3);
+    p{
+      opacity: 1;
+      color: @font-white;
+      transform: translateY(65%);
+    }
+    .image{
+      &:after{
+        opacity: 1;
+      }
+    }
+  }
+}

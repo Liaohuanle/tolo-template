@@ -1,17 +1,5 @@
-
-<section class="hero carousel is-medium has-carousel carousel-container-warpper carousel-animated carousel-animate-slide" data-autoplay="true">
-  <div class="hero-carousel carousel-animated carousel-animate-fade">
-    <div class='carousel-container'>
-      <% for(var i = 0; i < bannerImageList.length; i++ ){ %>
-        <div class='carousel-item has-background'>
-          <img class="is-background" src="<%= bannerImageList[i] %>" alt="吐露生物科技" />
-        </div>
-      <% } %>
-    </div>
-  </div>
-  <div class="hero-head">
-    <section class="container">
-      <%- include('../../../component/nav/sub-nav') %>
-    </section>
-  </div>
-</section>
+<%- include('./banner/index.ejs', bannerImageList) %>
+<%- include('./lasted-producted/index', lastedProduct) %>
+<%- include('./lasted-servce/index', lastedServce) %>
+<%- include('./lasted-news/index', lastedNews) %>
+<%- include('./footer-banner/index', footerBanner) %>
