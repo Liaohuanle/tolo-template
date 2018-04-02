@@ -1,0 +1,11 @@
+<nav class="breadcrumb is-small" aria-label="breadcrumbs">
+  <ul>
+    <%for(var i = 0; i < breadCrumbList.length; i++){%>
+      <li>
+        <a href="<%=breadCrumbList[i].href%>" class="<%-breadCrumbList[i].isActive?'is-active':''%>">
+          <%=breadCrumbList[i].title%>
+        </a>
+      </li>
+    <%}%>
+  </ul>
+</nav>
