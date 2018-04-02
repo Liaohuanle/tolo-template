@@ -1,6 +1,5 @@
 const generateView = require('../../../../util')
 const data = require('./data')
-console.info(data)
 module.exports = generateView({
   path: '/index',
   title: '吐露 - 首页',
