@@ -1,0 +1,28 @@
+<section class="section bg-gray">
+  <div class="container">
+    <h2 class="subtitle is-3">同类产品推荐</h2>
+    <div class="columns">
+      <% for(var i = 0; i < sameProductsRecomand.length; i ++){%>
+        <div class="column is-4">
+          <div class="product-card">
+            <a href="/product?target=<%=sameProductsRecomand[i].title%>" class="font-inital">
+              <img alt="吐露科技，最新产品" src="<%=sameProductsRecomand[i].src%>"/>
+              <h4 class="m-b-s m-t-l"><%=sameProductsRecomand[i].title%></h4>
+              <p class="m-b-s">
+                <span>¥<%=sameProductsRecomand[i].price%></span> - 
+                <%=sameProductsRecomand[i].desc%>
+              </p>
+              <div class="m-b-l"><%=sameProductsRecomand[i].type%></div>
+              <div class="tip-footer over-hidden">
+                <small class="is-left">销售 <%=sameProductsRecomand[i].sales%></small>
+                <small class="is-right">
+                  <%=sameProductsRecomand[i].date%> <%=sameProductsRecomand[i].isOnline ? '上架':'下架'%>
+                </small>
+              </div>
+            </a>
+          </div>
+        </div>
+      <%}%>
+    </div>
+  </div>
+</section>

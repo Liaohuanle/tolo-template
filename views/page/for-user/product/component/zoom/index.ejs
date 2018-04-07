@@ -1,8 +1,91 @@
 <section class="section p-c-t">
-  <div class="container columns">
-    <div class="column is-12 m-t-s">
+  <div class="container">
+    <div class="m-t-s m-b-s">
       <%-include('../../../../../component/bread-crumb/index.ejs', breadCrumbList)%>
     </div>
-    <div
+    <div class="good-banner columns flex-init is-desktop">
+      <div class="goods-left column is-6">
+        <div class="zoom-img magnifier-thumb-wrapper">
+          <img
+            src="<%=goodsList[0]%>"
+            alt="吐露科技"
+            data-large-img-wrapper="preview"
+            data-large-img-url="<%=goodsList[0]%>"
+            id="magnifier-source"
+          />
+          <div class="magnifier-preview" id="preview"></div>
+        </div>
+        <div class='carousel m-t-l is-5 carousel-animated carousel-animate-slide'>
+          <div class='carousel-container'>
+            <% for(var i = 0;i<goodsList.length;i++){ %>
+              <div class='carousel-item'>
+                <figure class="image">
+                  <img
+                    src="<%=goodsList[i]%>"
+                    alt="吐露科技"
+                  >
+                </figure>
+              </div>
+            <%}%>
+          </div>
+          <div class="carousel-navigation is-centered">
+            <div class="carousel-nav-left">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </div>
+            <div class="carousel-nav-right">
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="goods-right column is-6 p-l-m">
+        <h1 class="title is-3">
+          <%= goodsInfo.title %>
+        </h1>
+        <div class="goods-info">
+          <ul>
+            <%for(var i in goodsInfo.information){%>
+              <li>
+                <%=goodsInfo.information[i].key%>
+                <span><%=goodsInfo.information[i].value%></span>
+              </li>
+            <%}%>
+          </ul>
+        </div>
+        <p class="goods-description subtitle is-6 m-t-s"><%=goodsInfo.description%></p>
+        <div class="goods-item">
+          <label>价格</label>
+          <span class="text-default">¥<%=goodsInfo.price%></span>
+        </div>
+        <div class="goods-item">
+          <label>会员价</label>
+          <span class="text-primary subtitle is-3">¥<%=goodsInfo.vipPrice%></span>
+        </div>
+        <div class="goods-item">
+          <label class="p-t-xs is-left">规格</label>
+          <ul class="specification-container">
+            <%for(var i in specification.value){%>
+              <li class="button is-link is-outlined"><%=specification.value[i]%><%=specification.unit%></li>
+            <%}%>
+          </ul>
+        </div>
+        <div class="goods-item over-hidden">
+          <label class="p-t-xs is-left">数量</label>
+          <div class="control is-left">
+            <input class="input is-default goods-number" data-rest="<%=goodsRest.number%>" type="number">
+          </div>
+          <span class="tip-info">
+            库存<%=goodsRest.number%>件
+          </span>
+          <span class="tip-info">
+            <%=goodsRest.tip%>
+          </span>
+        </div>
+        <div class="goods-item">
+          <button class="button is-medium is-primary is-outlined m-t-l">立即购买</button>
+          <button class="button is-medium is-primary m-t-l m-l-s"><i class="fas fa-shopping-cart m-r-xs"></i>加入购物车</button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

@@ -3,7 +3,6 @@ const routerList = require('./router.js')
 const app = express()
 const pageCommonData = require('./views/data/index')
 
-
 app.use( '/static', express.static(__dirname + '/views/assets'))
 app.set('view engine', 'ejs')
 

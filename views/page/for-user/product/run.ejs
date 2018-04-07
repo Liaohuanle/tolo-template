@@ -1,1 +1,11 @@
+  <%- include('../../../assets/js/carousel.min.js') %>
+  <%- include('../../../assets/js/event.js') %>
   <%- include('../../../assets/js/magnifer.min.js') %>
+  const evt = new Event(),
+  m = new Magnifier(evt)
+  m.attach({
+    thumb: '#magnifier-source',
+    largeWrapper: 'preview',
+    zoom: 2,
+    zoomable: true
+});

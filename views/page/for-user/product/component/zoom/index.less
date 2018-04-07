@@ -1,0 +1,71 @@
+.good-banner{
+  .goods-left{
+    .zoom-img{
+      width: 100%;
+      text-align: center;
+      background: @card-gray;
+      padding: 2rem;
+      img{
+        display: block;
+        margin: auto;
+        width: 100%;
+      }
+    }
+  }
+  .goods-right{
+    .goods-info{
+      ul{
+        overflow: hidden;
+        display: flex;
+      }
+      li{
+        list-style: none;
+        color: #aaaaaa;
+        font-size: .85rem;
+        border-right: 1px solid #dbdada;
+        float: left;
+        padding: 0px 12px;
+        display: inline-block;
+        &:last-child{
+          border-right: none;
+        }
+        &:first-child{
+          padding-left: 0px;
+        }
+        span{
+          color: @font-black;
+          display: inline-block;
+        }
+      }
+    }
+    .goods-description{
+      line-height: 2.2rem;
+    }
+    .goods-item{
+      margin: 1rem 0;
+      label{
+        color: #aaaaaa;
+        width: 70px;
+        text-align: left;
+        display: inline-block;
+      }
+      .goods-number{
+        text-indent: .5rem;
+        font-size: 1.15rem;
+        font-weight: 600;
+        width: 8rem;
+        padding: 1rem 0;
+      }
+      .tip-info{
+        display: inline-block;
+        margin-top: .5rem;
+        margin-left: 1rem;
+        color: @primary-color;
+      }
+    }
+    .specification-container{
+      list-style: none;
+      display: inline-block;
+    }
+  }
+}

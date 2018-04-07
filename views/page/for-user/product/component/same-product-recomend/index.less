@@ -1,0 +1,39 @@
+.product-card{
+  padding: 1.5rem;
+  background: #fff;
+  transition: all .4s;
+  img{
+    display: block;
+    padding: 2.4rem 0rem;
+    width: 100%;
+  }
+  h4{
+    max-width: 100%;
+    overflow: hidden;
+    white-space: pre-wrap;
+    font-size: 1.2rem;
+  }
+  p{
+    max-width: 100%;
+    overflow: hidden;
+    span{
+      color: @primary-color;
+    }
+  }
+  &:hover{
+    box-shadow: 5px 5px 9px 5px rgba(247,244,239,.3);
+    background: #fff;
+  }
+}
+.column.is-4{
+  flex: initial;
+}
+.bg-gray{
+  background: @card-gray;
+}
+.tip-footer{
+  opacity: .5;
+  small{
+    display: inline-block;
+  }
+}
