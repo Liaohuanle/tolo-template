@@ -1,0 +1,39 @@
+.desc-item{
+  margin: 0 auto 2rem auto;
+  .subtitle{
+    &:not(:last-child), &:not(:last-child){
+      margin-bottom: .5rem;
+    }
+  }
+  .desc-item-article{
+    font-size: .95rem;
+  }
+}
+.product-container{
+  width: 100%;
+  thead{
+    th{
+      padding: 1rem 2rem 1rem 2rem; 
+    }
+  }
+  tbody{
+    tr{
+      td{
+        border-bottom: none;
+        border-top: none;
+        padding-left: 2rem;
+      }
+      &:first-child{
+        td{
+          padding-top: 2rem;
+        }
+      }
+      &:last-child{
+        td{
+          padding-bottom: 2rem;
+          border-bottom: 1px solid #dbdbdb;
+        }
+      }
+    }
+  }
+}

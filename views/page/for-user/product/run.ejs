@@ -36,10 +36,28 @@
       })
     }
 
+    initProductToggle(){
+      const ele = $("#product-toggle")
+      ele.click(function(e){
+        const target = e.target
+        const info = $(target).data('target')
+        $(target)
+        .parent()
+        .addClass('is-active')
+        .siblings()
+        .removeClass('is-active')
+        $(`#${info}`)
+        .css('display', 'block')
+        .siblings()
+        .css('display', 'none')
+      })
+    }
+
   }
   $(function(){
     const init = new INIT()
     init.initEventMagnifier()
     init.initGoodsInput()
+    init.initProductToggle()
   })
 </script>

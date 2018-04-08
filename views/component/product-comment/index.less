@@ -1,0 +1,52 @@
+.comment-container{
+  ul{
+    display: block;
+    li{
+      list-style: none;
+      display: flex;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #eee;
+      &:last-child{
+        border-bottom: none;
+      }
+      img{
+        background: #eee;
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+      }
+      .content{
+        margin-left: 2rem;
+        p{
+          display: block;
+          margin: initial;
+          &.products-info{
+            font-size: 1rem;
+            margin-top: .5rem;
+            max-width: 80%;
+            word-wrap: break-word;
+            display: block;
+          }
+          &.base-info{
+            font-size: .95rem;
+            opacity: .8;
+            .name{
+              margin-right: 1rem;
+              color: @goods-color;
+              max-width: 200px;
+              overflow: hidden;
+              float: left;
+              white-space: nowrap;
+              display: inline-block;
+              text-overflow: ellipsis;
+            }
+            .size{
+              color: @font-black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
