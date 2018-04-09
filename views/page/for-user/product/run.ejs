@@ -47,9 +47,10 @@
         .siblings()
         .removeClass('is-active')
         $(`#${info}`)
-        .css('display', 'block')
+        .removeClass('is-hidden')
+        .addClass('is-visible')
         .siblings()
-        .css('display', 'none')
+        .addClass('is-hidden')
       })
     }
 

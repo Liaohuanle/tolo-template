@@ -3,7 +3,8 @@
   background: @card-gray;
   transition: all .4s;
   &:hover{
-    background: @card-gray;
+    box-shadow: 3px 2px 5px 3px rgba(247,244,239,.5);
+    background: @card-hover-gray;
   }
   img{
     display: block;
@@ -26,18 +27,14 @@
   .oprtation-panel{
     text-align: center;
     input{
-      width: 90px;
+      width: 70px;
       margin-right: 4px;
       text-align: center;
       font-size: 16px;
     }
     .button{
-      width: 150px;
+      width: 170px;
     }
-  }
-  &:hover{
-    box-shadow: 5px 5px 9px 5px rgba(247,244,239,.3);
-    background: @card-hover-gray;
   }
 }
 .column.is-4{

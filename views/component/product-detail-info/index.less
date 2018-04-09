@@ -1,3 +1,4 @@
+@font-size: .85rem;
 .desc-item{
   margin: 0 auto 2rem auto;
   .subtitle{
@@ -5,9 +6,9 @@
       margin-bottom: .5rem;
     }
   }
-  .desc-item-article{
-    font-size: .95rem;
-  }
+}
+.desc-item-article{
+  font-size: @font-size;
 }
 .product-container{
   width: 100%;
@@ -17,6 +18,7 @@
     }
   }
   tbody{
+    font-size: @font-size;
     tr{
       td{
         border-bottom: none;
