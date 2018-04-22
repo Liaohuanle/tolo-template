@@ -1,0 +1,18 @@
+<section class="section">
+  <div class="container">
+    <ul class="filter-container m-b-m">
+      <%for(var i in filterList){%>
+        <li class="m-r-l">
+          <a href="javascript:void(0);" data-key="<%=filterList[i].key%>"><%=filterList[i].title%></a>
+        </li>
+      <%}%>
+    </ul>
+    <ul class="columns flex-wrap  m-t-m ">
+      <%for(var i in productList){%>
+        <li class="column is-3">
+          <%- include('../../../../../component/product-card/index', productList[i]) %>
+        </li>
+      <%}%>
+    </ul>
+  </div>
+</section>
