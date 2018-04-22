@@ -1,0 +1,15 @@
+<section class="section p-c-t">
+  <div class="container">
+    <div class="m-t-s m-b-s">
+      <%-include('../bread-crumb/index.ejs', breadCrumbList)%>
+    </div>
+    <div class="good-banner columns flex-init is-desktop">
+      <div class="goods-left column is-6">
+        <%-include('./zoom-magnifer.ejs', { goodsList })%>
+      </div>
+      <div class="goods-right column is-6 p-l-m">
+        <%-include('./product-info-detail.ejs', { goodsInfo, goodsRest})%>
+      </div>
+    </div>
+  </div>
+</section>

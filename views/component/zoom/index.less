@@ -1,15 +1,32 @@
+@zoom-img-width: 665px;
 .good-banner{
   .goods-left{
     .zoom-img{
-      width: 100%;
+      width: @zoom-img-width;
+      display: table-cell;
+      vertical-align: middle;
       text-align: center;
       background: @card-gray;
       padding: 2rem;
+      position: relative;
+      height: 350px;
       img{
         display: block;
         margin: auto;
+        display: table-cell;
+        vertical-align: middle;
         width: 100%;
       }
+    }
+    .magnifier-preview{
+      position: absolute;
+      top: 0px;
+      right: -102%;
+      background: @card-gray;
+      border-radius: 5px;
+      height: 100%;
+      z-index: 1000;
+      display: none;
     }
   }
   .goods-right{
@@ -67,5 +84,23 @@
       list-style: none;
       display: inline-block;
     }
+  }
+}
+
+.share-container{
+  opacity: .6;
+  line-height: 56px;
+  font-size: .8rem;
+  margin: 0 1.5rem;
+  text-align: center;
+  >span, a{
+    margin-right: .4rem;
+    display: inline-block;
+    &:last-child{
+      margin-right: initial;
+    }
+  }
+  :hover{
+    opacity: 1;
   }
 }

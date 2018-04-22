@@ -19,7 +19,10 @@
         thumb: '#thumb',
         largeWrapper: 'preview',
         zoom: 3,
-        zoomable: true
+        zoomable: true,
+        onthumbenter: function (e) {
+          console.info(e)
+        },
       });
     }
     

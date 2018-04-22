@@ -1,0 +1,25 @@
+<section class="section bg-gray">
+  <div class="container">
+    <h2 class="subtitle is-3">同类服务推荐</h2>
+    <div class="columns">
+      <% for(var i = 0; i < sameServiceRecomand.length; i ++){%>
+        <div class="column is-4">
+          <div class="service-card">
+            <a href="/service?target=<%=sameServiceRecomand[i].id%>" class="font-inital">
+              <img alt="吐露科技，最新产品" src="<%=sameServiceRecomand[i].src%>"/>
+              <h4 class="m-t-s"><%=sameServiceRecomand[i].title%></h4>
+              <div class="tip-footer over-hidden">
+                <small class="is-left price">¥ <%=sameServiceRecomand[i].sales%></small>
+                <small class="is-right">
+                  周期
+                  <%=sameServiceRecomand[i].term%>
+                  个工作日
+                </small>
+              </div>
+            </a>
+          </div>
+        </div>
+      <%}%>
+    </div>
+  </div>
+</section>

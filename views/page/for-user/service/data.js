@@ -4,78 +4,55 @@ const breadCrumbList = [
     title: '全部',
     isActive: false
   },{
-    href: '?target=PRC系列',
-    title: 'PRC系列',
+    href: '?target=DNA相关',
+    title: 'DNA相关',
     isActive: false
-  },{
-    href: '?target=RT-PCR',
-    title: 'RT-PCR',
-    isActive: true
   }
 ]
 
-const sameProductsRecomand = [
+const sameServiceRecomand = [
   {
     title: 'E. coli DNA  Polymerase I',
+    id: 7393792310343,
     price: '300',
-    desc: 'E. coli DNA Polymerase I',
-    type: 'MENT',
-    src: '/static/lasted-producted.png',
+    src: '/static/same-service.png',
     sales: Math.floor( Math.random()*1000),
-    date: '2017.09.13',
-    isOnline: true
+    term: '26'
   },{
     title: 'E. coli DNA  Polymerase I',
+    id: 7393792310343,
     price: Math.floor( Math.random()*1300),
-    desc: 'E. coli DNA Polymerase I',
-    type: 'MENT',
-    src: '/static/lasted-producted.png',
+    src: '/static/same-service.png',
     sales: Math.floor( Math.random()*1000),
-    date: '2017.11.13',
-    isOnline: false
+    term: '34'
   },{
     title: 'E. coli DNA  Polymerase I',
+    id: 7393792310343,
     price: Math.floor( Math.random()*1300),
-    desc: 'E. coli DNA Polymerase I',
-    type: 'MENT',
-    src: '/static/lasted-producted.png',
+    src: '/static/same-service.png',
     sales: Math.floor( Math.random()*1000),
-    date: '2018.01.19',
-    isOnline: true
+    term: '28'
   },{
     title: 'E. coli DNA  Polymerase I',
+    id: 7393792310343,
     price: Math.floor( Math.random()*1300),
-    desc: 'E. coli DNA Polymerase I',
-    type: 'MENT',
-    src: '/static/lasted-producted.png',
+    src: '/static/same-service.png',
     sales: Math.floor( Math.random()*1000),
-    date: '2018.03.22',
-    isOnline: true
+    term: '30'
   }
 ]
 
 const goodsList = [
-  '/static/zoom-pic.png',
-  '/static/zoom-pic.png',
-  '/static/zoom-pic.png',
-  '/static/zoom-pic.png',
-  '/static/zoom-pic.png',
-  '/static/zoom-pic.png'
+  '/static/service-detail.png'
 ]
 
 const goodsInfo = {
   title: 'Dpx高保真聚合酶',
+  subtitle: '引物延伸实验，鉴定转录起始位点',
   description: 'Dpx DNA Polymerase 是在吐露港生物科技有限公司经过生物工程技术筛选和改造后获得的一种高保真、快速DNA聚合酶',
   price: '400',
   vipPrice: '360',
-  information: [
-    {
-      key: '上架',
-      value: '2018-01-29'
-    },{
-      key: '产品货号',
-      value: '01-25556'
-    },{
+  information: [{
       key: '销量',
       value: '8345'
     },{
@@ -89,9 +66,9 @@ const goodsInfo = {
 }
 
 const specification = {
-  key: '规格',
-  value: [ 1, 5, 50 ],
-  unit: 'ML'
+  key: '项目类别',
+  value: [ 'RNA抽提', '质检', 'PRIMER EXTENON', '数据处理' ],
+  unit: ''
 }
 
 const goodsRest = {
@@ -179,7 +156,7 @@ const productComment = {
 
 module.exports = {
   breadCrumbList,
-  sameProductsRecomand,
+  sameServiceRecomand,
   goodsList,
   goodsInfo,
   specification,
