@@ -1,0 +1,17 @@
+<section class="accordions is-small">
+  <%for(var k = 0; k< accordionList.length; k++){%>
+    <article class="accordion">
+      <div class="accordion-header toggle">
+        <p><%=accordionList[k].title%></p>
+        <i class="fa-plus fa"></i>
+      </div>
+      <div class="accordion-body">
+        <ul class="accordion-content">
+          <%for(var j in accordionList[k].children){%>
+            <li><%=accordionList[k].children[j]%></li>
+          <%}%>
+        </ul>
+      </div>
+    </article>
+  <%}%>
+</section>

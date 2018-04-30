@@ -1,0 +1,17 @@
+<section>
+  <div class="tab-item">
+    <h3 class="subtitle is-6">类别</h3>
+    <hr></hr>
+    <%- include('../../../../../component/accoradion/index', { "accordionList": productTable }) %>
+  </div>
+  <div class="tab-item m-t-m">
+    <h3 class="subtitle is-6">只想看</h3>
+    <hr></hr>
+    <%- include('../../../../../component/check-radio/index.ejs', { "radioList": filterList }) %>
+  </div>
+  <div class="tab-item m-t-m">
+    <h3 class="subtitle is-6">价格</h3>
+    <hr></hr>
+    <div class="tolo-slider asRange m-t-m"></div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+ <div class="product-card <%=isGray?'gray-theme':'null'%>">
+  <a href="/product?target=<%=product.title%>" class="font-inital">
+    <img alt="吐露科技，最新产品" src="<%=product.src%>"/>
+    <div class="content-container">
+      <h4 class="m-b-s m-t-s"><%=product.title%></h4>
+      <p class="m-b-s">
+        <span>¥<%=product.price%></span> - 
+        <%=product.desc%>
+      </p>
+      <div class="m-b-s"><%=product.type%></div>
+      <div class="tip-footer over-hidden">
+        <small class="is-left">销售 <%=product.sales%></small>
+        <small class="is-right">
+          <%=product.date%> <%=product.isOnline ? '上架':'下架'%>
+        </small>
+      </div>
+    </div>
+  </a>
+</div>

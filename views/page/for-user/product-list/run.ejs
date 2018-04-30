@@ -1,0 +1,51 @@
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+  <%- include('../../../assets/js/toggle-accorifin.js') %>
+  <%- include('../../../assets/js/as-range.js') %>
+</script>
+<script>
+  $(function(){
+    $(".tolo-slider").asRange({
+      range: true,
+      limit: false,
+      tip: {
+        active: 'always'
+      },
+      keyboard: true
+    });
+    // when init
+    $(".tolo-slider").on('asRange::init', function (e) {
+      // do something
+    });
+
+    // when ready
+    $(".tolo-slider").on('asRange::ready', function (e) {
+      // do something
+    });
+
+    // when enabled
+    $(".tolo-slider").on('asRange::enable', function (e) {
+      // do something
+    });
+
+    // when disabled
+    $(".tolo-slider").on('asRange::disable', function (e) {
+      // do something
+    });
+
+    // when the value is changed
+    $(".tolo-slider").on('asRange::change', function (e) {
+      // do something
+    });
+
+    // when mouse up
+    $(".tolo-slider").on('asRange::end', function (e) {
+      // do something
+    });
+
+    // when destroyed
+    $(".tolo-slider").on('asRange::destroy', function (e) {
+      // do something
+    });
+  })
+</script>
