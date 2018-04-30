@@ -1,0 +1,65 @@
+<script>
+  <%- include('../../../assets/js/zepto.js') %>
+  <%- include('../../../assets/js/carousel.min.js') %>
+  <%- include('../../../assets/js/event.js') %>
+  <%- include('../../../assets/js/magnifer.min.js') %>
+  <%- include('../../../assets/js/common.js') %>
+</script>
+<script>
+  class INIT{
+
+    constructor(){
+      this.goodsRest = $("#goodsRest")
+    }
+
+    initEventMagnifier(){
+      const evt = new Event(),
+      m = new Magnifier(evt)
+      m.attach({
+        thumb: '#thumb',
+        largeWrapper: 'preview',
+        zoom: 3,
+        zoomable: true
+      });
+    }
+    
+    initGoodsInput(){
+      const ele = $("#goodsRest")
+      ele.on('input', (e) => {
+        const value = !!e && e.value || e.target.value
+        if(Number(value) > ele.attr('data-rest')){
+          $('#buyNow, #addToCar').attr('disabled', 'true') 
+          $('#tip-rest').removeClass('is-hidden')
+        }else{
+          $('#tip-rest').attr('class','is-hidden')
+          $('#buyNow, #addToCar').attr('disabled', 'false')
+        }
+      })
+    }
+
+    initProductToggle(){
+      const ele = $("#product-toggle")
+      ele.click(function(e){
+        const target = e.target
+        const info = $(target).data('target')
+        $(target)
+        .parent()
+        .addClass('is-active')
+        .siblings()
+        .removeClass('is-active')
+        $(`#${info}`)
+        .removeClass('is-hidden')
+        .addClass('is-visible')
+        .siblings()
+        .addClass('is-hidden')
+      })
+    }
+
+  }
+  $(function(){
+    const init = new INIT()
+    init.initEventMagnifier()
+    init.initGoodsInput()
+    init.initProductToggle()
+  })
+</script>

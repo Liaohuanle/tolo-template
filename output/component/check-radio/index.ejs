@@ -1,0 +1,11 @@
+<%for(var i in radioList){%>
+  <div class="field">
+    <input
+      class="is-checkradio is-circle is-small"
+      type="checkbox"
+      name="<%=radioList[i].val%>"
+      checked="<%=radioList[i].checked%>"
+    >
+    <label for="<%=radioList[i].val%>"><%=radioList[i].title%></label>
+  </div>
+<%}%>

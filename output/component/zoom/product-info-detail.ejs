@@ -1,0 +1,51 @@
+<h1 class="title is-3 is-spaced">
+  <%= goodsInfo.title %>
+</h1>
+<%if(!!goodsInfo.subtitle){%>
+  <p class="subtitle is-6 text-goods">
+    <%=goodsInfo.subtitle%>
+  </p>
+<%}%>
+<div class="goods-info">
+  <ul>
+    <%for(var i in goodsInfo.information){%>
+      <li>
+        <%=goodsInfo.information[i].key%>
+        <span><%=goodsInfo.information[i].value%></span>
+      </li>
+    <%}%>
+  </ul>
+</div>
+<p class="goods-description subtitle is-6 m-t-s"><%=goodsInfo.description%></p>
+<div class="goods-item">
+  <label>价格</label>
+  <span class="text-default">¥<%=goodsInfo.price%></span>
+</div>
+<div class="goods-item">
+  <label>会员价</label>
+  <span class="text-primary subtitle is-3">¥<%=goodsInfo.vipPrice%></span>
+</div>
+<div class="goods-item">
+  <label class="p-t-xs is-left"><%=specification.key%></label>
+  <ul class="specification-container">
+    <%for(var i in specification.value){%>
+      <li class="button is-link is-outlined"><%=specification.value[i]%><%=specification.unit%></li>
+    <%}%>
+  </ul>
+</div>
+<div class="goods-item over-hidden">
+  <label class="p-t-xs is-left">数量</label>
+  <div class="control is-left">
+    <input class="input is-default goods-number" id="goodsRest" data-rest="<%=goodsRest.number%>" type="number">
+  </div>
+  <span id="tip-rest" class="tip-info is-hidden">
+    库存<%=goodsRest.number%>件
+  </span>
+  <span class="tip-info is-hidden">
+    <%=goodsRest.tip%>
+  </span>
+</div>
+<div class="goods-item">
+  <button class="button is-medium is-primary is-outlined m-t-m" id="buyNow">立即购买</button>
+  <button class="button is-medium is-primary m-t-m m-l-s" id="addToCar"><i class="fas fa-shopping-cart m-r-xs"></i>加入购物车</button>
+</div>

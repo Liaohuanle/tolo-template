@@ -1,0 +1,12 @@
+<section class="section bg-gray">
+  <div class="container">
+    <h2 class="subtitle is-3">同类产品推荐</h2>
+    <div class="columns">
+      <% for(var i = 0; i < sameProductsRecomand.length; i ++){%>
+        <div class="column is-4">
+          <%- include('../../../../../component/product-card-type2/index', { product: sameProductsRecomand[i], isGray: false })%>
+        </div>
+      <%}%>
+    </div>
+  </div>
+</section>

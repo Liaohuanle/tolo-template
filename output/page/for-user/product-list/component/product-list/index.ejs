@@ -1,0 +1,8 @@
+<%- include('../filter-header/index.ejs')%>
+<ul class="columns flex-wrap m-t-s">
+  <%for(var i in productList){%>
+    <li class="column is-4">
+      <%- include('../../../../../component/product-card-type2/index', { product: productList[i], isGray: true }) %>
+    </li>
+  <%}%>
+</ul>

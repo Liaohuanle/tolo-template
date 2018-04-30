@@ -1,0 +1,22 @@
+
+<section class="section section-bg-brown">
+  <div class="container">
+    <section class="carousel has-carousel" data-autoplay="true">
+      <div class="carousel-animated carousel-animate-fade">
+        <div class='carousel-container footer-banner-container'>
+          <% for(var i = 0; i < footerBanner.length; i++ ){ %>
+            <div class='carousel-item <%= i ==0 ? "is-active" : ""%>'>
+              <h1 class="m-b-s"><%= footerBanner[i].title %></h1>
+              <article class="m-b-s"><%= footerBanner[i].content %></article>
+              <img
+                class="is-background m-t-m m-b-m"
+                src="<%= footerBanner[i].imageUri %>"
+                alt="吐露生物科技"
+              />
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

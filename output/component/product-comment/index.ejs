@@ -1,0 +1,21 @@
+<div class="comment-container">
+  <ul>
+    <%for(var i in productComment.list){%>
+      <li>
+        <img src="<%=productComment.list[i].profile%>" alt="吐露科技"/>
+        <div class="content">
+          <p class="base-info">
+            <span class="name"><%=productComment.list[i].name%></span>
+            <span class="size">
+              所订规格:
+              <%=productComment.list[i].size%>
+            </span>
+          </p>
+          <p class="products-info">
+            <%=productComment.list[i].comment%>
+          </p>
+        </div>
+      </li>
+    <%}%>
+  </ul>
+</div>

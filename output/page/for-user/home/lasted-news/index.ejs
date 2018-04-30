@@ -1,0 +1,21 @@
+<section class="section">
+  <div class="container">
+    <div class="has-text-left ">
+      <h1 class="title font-400"><%= lastedNews.title %></h1>
+    </div>
+    <div class='columns m-t-s'>
+      <% for(var i = 0;i<3;i++){ %>
+        <div class='news-item column is-4'>
+          <p>
+            <%=lastedNews.newsList[i].date.substr(0,2)%>
+            <sup><%=lastedNews.newsList[i].date.substr(2)%></sup>
+          </p>
+          <article class="m-b-l">
+            <%=lastedNews.newsList[i].content%>
+          </article>
+          <a href="#">查看更多 -></a>
+        </div>
+      <%}%>
+    </div>
+  </div>
+</section>
