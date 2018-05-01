@@ -1,0 +1,9 @@
+<section class="filter-container">
+  <ul class="filter-container m-b-m">
+    <%for(var i in filterList){%>
+      <li class="m-r-l">
+        <a href="javascript:void(0);" data-key="<%=filterList[i].key%>"><%=filterList[i].title%></a>
+      </li>
+    <%}%>
+  </ul>
+</section>

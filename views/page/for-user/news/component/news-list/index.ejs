@@ -1,0 +1,10 @@
+<section class="section container p-c-l p-c-r">
+  <%- include('../filter-header/index.ejs')%>
+  <ul class="columns flex-wrap">
+    <%for(var i in newsList){%>
+      <li class="column is-4">
+        <%- include('../../../../../component/news-card/index', { news : newsList[i]}) %>
+      </li>
+    <%}%>
+  </ul>
+</section>
