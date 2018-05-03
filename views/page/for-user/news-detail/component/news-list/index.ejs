@@ -1,0 +1,12 @@
+<section class="section bg-gray m-t-l">
+  <div class="container">
+    <h3 class="subtitle is-4">更多新闻</h3>
+    <ul class="columns flex-wrap">
+      <%for(var i in newsList){%>
+        <li class="column is-4">
+          <%- include('../../../../../component/news-card/index', { news : newsList[i]}) %>
+        </li>
+      <%}%>
+    </ul>
+  </div>
+</section>
